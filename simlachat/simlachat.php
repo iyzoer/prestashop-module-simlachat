@@ -260,6 +260,11 @@ class Simlachat extends Module
         return $result;
     }
 
+    /**
+     * @param $address
+     *
+     * @return bool
+     */
     private function validateCrmAddress($address)
     {
         if (preg_match("/https:\/\/(.*).(retailcrm|simlachat).(pro|ru|es|com)/", $address) === 1) {
@@ -269,6 +274,11 @@ class Simlachat extends Module
         return false;
     }
 
+    /**
+     * @param $settings
+     *
+     * @return bool
+     */
     private function validateApiVersion($settings)
     {
         $api = new SimlachatProxy(
@@ -287,6 +297,12 @@ class Simlachat extends Module
         return false;
     }
 
+    /**
+     * @param $settings
+     * @param $output
+     *
+     * @return string
+     */
     private function validateForm($settings, $output)
     {
         if (!$this->validateCrmAddress($settings['url']) || !Validate::isGenericName($settings['url'])) {
@@ -300,6 +316,9 @@ class Simlachat extends Module
         return $output;
     }
 
+    /**
+     * @return string
+     */
     private function saveSettings()
     {
         $output = '';
