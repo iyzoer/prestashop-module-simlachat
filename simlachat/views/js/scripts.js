@@ -1,3 +1,12 @@
+/**
+ * @author Retail Driver LCC
+ * @copyright RetailCRM
+ * @license GPL
+ * @version 1.0.0
+ * @link https://simlachat.com
+ *
+ */
+
 $(function(){
     var Main = {
         init: function() {
